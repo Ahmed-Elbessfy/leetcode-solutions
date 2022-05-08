@@ -3,13 +3,26 @@
  * @return {number}
  */
 var findDuplicate = function(nums) {
-    let repeats = {}
-    nums.forEach(n => repeats[n] = ++repeats[n] || 1)
-    // console.log(repeats)
-    for(let n in repeats) {
-        if (repeats[n] != 1) return n
-    }
+    // let repeats = {}
+    // nums.forEach(n => repeats[n] = ++repeats[n] || 1)
+    // // console.log(repeats)
+    // for(let n in repeats) {
+    //     if (repeats[n] != 1) return n
+    // }
     
-      // if(new Set([...nums]).size == 1) return nums[0]
-    // return [...nums].filter((n,i) => nums.lastIndexOf(n) !== i)
+    const map = new Map()    
+let res = 0;
+
+for(let n of nums){
+    map.set(n, map.get(n) + 1 || 1)
+}
+
+map.forEach((value, key) => {
+    if(value > 1){
+        res = key
+    }
+})
+
+return res
+    
 };
