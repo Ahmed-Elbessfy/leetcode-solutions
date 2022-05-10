@@ -4,6 +4,9 @@
  * @return {number[]}
  */
 var intersection = function(nums1, nums2) {
-    let fil = nums1.filter(n => nums2.includes(n))
-    return [...new Set([...fil])]
+    let res = []
+    nums1.forEach(n => {
+        if(nums2.includes(n) && !res.includes(n)) res.push(n)
+    })
+    return res
 };
