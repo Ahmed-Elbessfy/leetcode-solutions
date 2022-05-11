@@ -14,5 +14,14 @@ var findDifference = function(nums1, nums2) {
 //         if(!nums1.includes(i) && !r2.includes(i)) r2.push(i)
 //     }
     
-    return [[...new Set(nums1.filter(n => !nums2.includes(n)))], [...new Set(nums2.filter(n => !nums1.includes(n)))]]
+    let ans1=new Set(nums1)
+nums2.forEach(v=>{ans1.delete(v)})
+let ans2=new Set(nums2);
+nums1.forEach(v=>{ans2.delete(v)})
+
+return ([[...ans1], [...ans2]]);
+    
+    // return [[...new Set(nums1.filter(n => !nums2.includes(n)))], [...new Set(nums2.filter(n => !nums1.includes(n)))]]
+    
+    
 };
