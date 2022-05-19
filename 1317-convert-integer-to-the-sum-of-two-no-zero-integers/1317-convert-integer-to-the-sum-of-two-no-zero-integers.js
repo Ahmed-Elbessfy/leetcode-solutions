@@ -7,8 +7,6 @@ var getNoZeroIntegers = function(n) {
     while(i != n){
         let m = n - i
         if(!String(m).includes("0") && !String(i).includes("0")) return [i,m]
-        
-        
         i++
     }
 };
