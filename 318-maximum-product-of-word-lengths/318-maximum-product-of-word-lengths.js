@@ -7,7 +7,7 @@ var maxProduct = function(words) {
     for(let i = 0; i < words.length; i++){
         let curr = words[i]
         for(let j = i + 1; j < words.length; j++){
-            if(curr.split("").every(l => !words[j].includes(l))){
+            if(curr.split("").every(l => words[j].indexOf(l) == -1 )){
                 max = Math.max(max, curr.length * words[j].length)
             }
         }
