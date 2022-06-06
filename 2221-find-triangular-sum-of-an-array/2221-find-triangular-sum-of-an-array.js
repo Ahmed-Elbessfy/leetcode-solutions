@@ -3,12 +3,24 @@
  * @return {number}
  */
 var triangularSum = function(nums) {
-    while(nums.length > 1){
-        let newArr = []
-        for(let i = 0; i < nums.length - 1; i++){
-            newArr.push((nums[i] + nums[i+1]) % 10)
+//     while(nums.length > 1){
+//         let newArr = []
+//         for(let i = 0; i < nums.length - 1; i++){
+//             newArr.push((nums[i] + nums[i+1]) % 10)
+//         }
+//         nums = newArr
+//     }
+//     return nums
+    
+    let j = nums.length;
+
+    while (j > 1) {
+        for (let i = 0; i < j - 1; i++) {
+            nums[i] = (nums[i] + (nums[i + 1] || 0)) % 10;
         }
-        nums = newArr
+        
+        j--;
     }
-    return nums
+    
+    return nums[0];
 };
