@@ -19,7 +19,6 @@ var nextGreaterElements = function(nums) {
                     break;
                 }
             }
-
         }
     }
     
